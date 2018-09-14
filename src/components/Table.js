@@ -8,22 +8,45 @@ export default class Table extends Component {
   }
 
   render() {
-    let rowsArr = [];
-    let boxClass;
-    let count = 1;
-    let flag = false;
+    let rowsArr = [],
+      boxClass,
+      count = 1,
+      flag = false,
+      color = undefined;
+
     for (let i = 0; i < 8; i++) {
       for (let j = 0; j < 8; j++) {
-        if (flag) {
-          boxClass = count % 2 === 1 ? styles.blackSquare : styles.whiteSquare;
+        if (this.props.table[i][j]) {
+          boxClass = styles.pressedBox;
+        } else if (flag) {
+          if (count % 2 === 1) {
+            color = "black";
+            boxClass = styles.blackBox;
+            textColor = styles.whiteText;
+          } else {
+            boxClass = styles.whiteBox;
+            textColor = styles.blackText;
+            color = "white";
+          }
         } else {
-          boxClass = count % 2 === 1 ? styles.whiteSquare : styles.blackSquare;
+          if (count % 2 === 1) {
+            color = "white";
+            boxClass = styles.whiteBox;
+            textColor = styles.blackText;
+          } else {
+            boxClass = styles.blackBox;
+            color = "black";
+            textColor = styles.whiteText;
+          }
         }
         rowsArr.push(
           <Box
-            boxClass={boxClass}
+            boxClass={[styles.box, boxClass]}
+            textStyle={textColor}
             row={i}
             column={j}
+            number={count}
+            color={color}
             selectBox={this.props.selectBox}
             key={`box-${i}-${j}`}
           />
@@ -42,16 +65,25 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     flexWrap: "wrap",
-    marginTop: 40
+    marginTop: 2
   },
-  blackSquare: {
-    backgroundColor: "#000000",
+  blackBox: {
+    backgroundColor: "#000000"
+  },
+  whiteBox: {
+    backgroundColor: "#f1f2f6"
+  },
+  pressedBox: {
+    backgroundColor: "#eb4d4b"
+  },
+  box: {
     height: Dimensions.get("window").width / 8,
     width: Dimensions.get("window").width / 8
   },
-  whiteSquare: {
-    backgroundColor: "#FFFFFF",
-    height: Dimensions.get("window").width / 8,
-    width: Dimensions.get("window").width / 8
+  whiteText: {
+    color: "#f1f2f6"
+  },
+  blackText: {
+    color: "#000000"
   }
 });
