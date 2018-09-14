@@ -1,5 +1,7 @@
 ### Chessboard
 
+![chessboard](https://user-images.githubusercontent.com/23444805/45564503-3f901a80-b816-11e8-99ec-fef42c33706a.gif)
+
 ```
 # Bishops
 #
