@@ -404,14 +404,14 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     alignItems: "center",
-    marginTop: 20
+    marginTop: 51
   },
   footer: {
     backgroundColor: "#ced6e0",
     alignSelf: "stretch",
     justifyContent: "flex-start",
     paddingBottom: 10,
-    paddingTop: 10
+    paddingTop: 23
   },
   buttonsContainer: {
     flexDirection: "row",
@@ -419,7 +419,7 @@ const styles = StyleSheet.create({
   },
   instructions: {
     margin: 20,
-    textAlign: "center",
+    textAlign: "left",
     fontWeight: "100"
   }
 });
