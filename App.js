@@ -404,7 +404,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "column",
     alignItems: "center",
-    marginTop: 51
+    marginTop: 50
   },
   footer: {
     backgroundColor: "#ced6e0",
