@@ -411,7 +411,7 @@ const styles = StyleSheet.create({
     alignSelf: "stretch",
     justifyContent: "flex-start",
     paddingBottom: 10,
-    paddingTop: 10
+    paddingTop: 20
   },
   buttonsContainer: {
     flexDirection: "row",
